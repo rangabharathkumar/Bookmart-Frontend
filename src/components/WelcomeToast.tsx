@@ -46,8 +46,8 @@ export function WelcomeToast() {
                         onClick={handleClose}
                     />
 
-                    {/* Toast in Center */}
-                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 pointer-events-none">
+                    {/* Toast in Center - Smaller on mobile */}
+                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-4 pointer-events-none">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.5, y: 50 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -57,10 +57,10 @@ export function WelcomeToast() {
                                 stiffness: 300,
                                 damping: 25
                             }}
-                            className="w-full max-w-md pointer-events-auto"
+                            className="w-full max-w-[90vw] sm:max-w-md pointer-events-auto"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <div className="relative bg-gradient-to-r from-primary-500 via-purple-500 to-accent-500 rounded-2xl shadow-2xl overflow-hidden">
+                            <div className="relative bg-gradient-to-r from-primary-500 via-purple-500 to-accent-500 rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden">
                                 {/* Animated background gradient */}
                                 <motion.div
                                     className="absolute inset-0 bg-gradient-to-r from-primary-400 via-purple-400 to-accent-400 opacity-50"
@@ -77,12 +77,12 @@ export function WelcomeToast() {
                                     }}
                                 />
 
-                                {/* Sparkle particles */}
+                                {/* Sparkle particles - Fewer on mobile */}
                                 <div className="absolute inset-0 overflow-hidden">
-                                    {[...Array(8)].map((_, i) => (
+                                    {[...Array(4)].map((_, i) => (
                                         <motion.div
                                             key={i}
-                                            className="absolute"
+                                            className="absolute hidden sm:block"
                                             initial={{
                                                 x: `${Math.random() * 100}%`,
                                                 y: `${Math.random() * 100}%`,
@@ -100,25 +100,25 @@ export function WelcomeToast() {
                                                 repeatDelay: 1,
                                             }}
                                         >
-                                            <Sparkles className="w-4 h-4 text-white" />
+                                            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                                         </motion.div>
                                     ))}
                                 </div>
 
                                 {/* Content */}
-                                <div className="relative p-4 sm:p-6 text-white">
+                                <div className="relative p-3 sm:p-4 md:p-6 text-white">
                                     <button
                                         onClick={handleClose}
-                                        className="absolute top-4 right-4 p-1 hover:bg-white/20 rounded-lg transition-colors"
+                                        className="absolute top-2 right-2 sm:top-4 sm:right-4 p-1 hover:bg-white/20 rounded-lg transition-colors"
                                     >
-                                        <X className="w-5 h-5" />
+                                        <X className="w-4 h-4 sm:w-5 sm:h-5" />
                                     </button>
 
                                     <motion.div
                                         initial={{ scale: 0 }}
                                         animate={{ scale: 1 }}
                                         transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
-                                        className="flex items-center gap-3 mb-3"
+                                        className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3"
                                     >
                                         <motion.div
                                             animate={{
@@ -128,16 +128,16 @@ export function WelcomeToast() {
                                                 duration: 0.5,
                                                 delay: 0.5,
                                             }}
-                                            className="text-3xl sm:text-4xl"
+                                            className="text-2xl sm:text-3xl md:text-4xl"
                                         >
                                             👋
                                         </motion.div>
-                                        <div>
+                                        <div className="flex-1 min-w-0">
                                             <motion.h3
                                                 initial={{ opacity: 0, x: -20 }}
                                                 animate={{ opacity: 1, x: 0 }}
                                                 transition={{ delay: 0.3 }}
-                                                className="text-xl sm:text-2xl font-bold"
+                                                className="text-lg sm:text-xl md:text-2xl font-bold truncate"
                                             >
                                                 Welcome to BookMart!
                                             </motion.h3>
@@ -145,7 +145,7 @@ export function WelcomeToast() {
                                                 initial={{ opacity: 0, x: -20 }}
                                                 animate={{ opacity: 1, x: 0 }}
                                                 transition={{ delay: 0.4 }}
-                                                className="text-white/90 text-sm"
+                                                className="text-white/90 text-xs sm:text-sm"
                                             >
                                                 Discover your next great read ✨
                                             </motion.p>
@@ -156,7 +156,7 @@ export function WelcomeToast() {
                                         initial={{ opacity: 0, y: 10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.5 }}
-                                        className="flex flex-col sm:flex-row gap-2 mt-4"
+                                        className="flex flex-col sm:flex-row gap-2 mt-3 sm:mt-4"
                                     >
                                         <motion.div
                                             whileHover={{ scale: 1.05 }}
@@ -165,7 +165,7 @@ export function WelcomeToast() {
                                         >
                                             <a
                                                 href="/books"
-                                                className="block w-full text-center px-3 sm:px-4 py-2 text-sm sm:text-base bg-white text-primary-600 rounded-lg font-semibold hover:bg-white/90 transition-colors"
+                                                className="block w-full text-center px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm md:text-base bg-white text-primary-600 rounded-lg font-semibold hover:bg-white/90 transition-colors"
                                                 onClick={handleClose}
                                             >
                                                 Browse Books
@@ -175,7 +175,7 @@ export function WelcomeToast() {
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 0.95 }}
                                             onClick={handleClose}
-                                            className="px-3 sm:px-4 py-2 text-sm sm:text-base bg-white/20 backdrop-blur-sm rounded-lg font-semibold hover:bg-white/30 transition-colors whitespace-nowrap"
+                                            className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm md:text-base bg-white/20 backdrop-blur-sm rounded-lg font-semibold hover:bg-white/30 transition-colors whitespace-nowrap"
                                         >
                                             Maybe Later
                                         </motion.button>
@@ -184,7 +184,7 @@ export function WelcomeToast() {
 
                                 {/* Bottom glow effect */}
                                 <motion.div
-                                    className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white to-transparent"
+                                    className="absolute bottom-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-white to-transparent"
                                     animate={{
                                         opacity: [0.3, 0.8, 0.3],
                                     }}
