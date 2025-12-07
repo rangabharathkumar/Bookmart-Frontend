@@ -161,16 +161,22 @@ export function BooksPage() {
                     </AnimatePresence>
                 </motion.div>
 
-                {/* Results Count */}
+                {/* Results Count and Quote */}
                 <motion.div
                     className="mb-6"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
                 >
-                    <p className="text-neutral-600">
-                        Showing <span className="font-semibold text-primary-600">{filteredBooks.length}</span> {filteredBooks.length === 1 ? 'book' : 'books'}
-                    </p>
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                        <p className="text-neutral-600">
+                            Showing <span className="font-semibold text-primary-600">{filteredBooks.length}</span> {filteredBooks.length === 1 ? 'book' : 'books'}
+                        </p>
+                        
+                        <p className="text-center lg:text-right text-xs sm:text-sm md:text-base lg:text-lg font-light italic text-neutral-500 max-w-2xl">
+                            "Books are keys to worlds waiting to be explored."
+                        </p>
+                    </div>
                 </motion.div>
 
                 {/* Books Grid */}
