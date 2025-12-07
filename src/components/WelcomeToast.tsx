@@ -106,7 +106,7 @@ export function WelcomeToast() {
                                 </div>
 
                                 {/* Content */}
-                                <div className="relative p-6 text-white">
+                                <div className="relative p-4 sm:p-6 text-white">
                                     <button
                                         onClick={handleClose}
                                         className="absolute top-4 right-4 p-1 hover:bg-white/20 rounded-lg transition-colors"
@@ -128,7 +128,7 @@ export function WelcomeToast() {
                                                 duration: 0.5,
                                                 delay: 0.5,
                                             }}
-                                            className="text-4xl"
+                                            className="text-3xl sm:text-4xl"
                                         >
                                             👋
                                         </motion.div>
@@ -137,7 +137,7 @@ export function WelcomeToast() {
                                                 initial={{ opacity: 0, x: -20 }}
                                                 animate={{ opacity: 1, x: 0 }}
                                                 transition={{ delay: 0.3 }}
-                                                className="text-2xl font-bold"
+                                                className="text-xl sm:text-2xl font-bold"
                                             >
                                                 Welcome to BookMart!
                                             </motion.h3>
@@ -156,7 +156,7 @@ export function WelcomeToast() {
                                         initial={{ opacity: 0, y: 10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.5 }}
-                                        className="flex gap-2 mt-4"
+                                        className="flex flex-col sm:flex-row gap-2 mt-4"
                                     >
                                         <motion.div
                                             whileHover={{ scale: 1.05 }}
@@ -165,7 +165,7 @@ export function WelcomeToast() {
                                         >
                                             <a
                                                 href="/books"
-                                                className="block w-full text-center px-4 py-2 bg-white text-primary-600 rounded-lg font-semibold hover:bg-white/90 transition-colors"
+                                                className="block w-full text-center px-3 sm:px-4 py-2 text-sm sm:text-base bg-white text-primary-600 rounded-lg font-semibold hover:bg-white/90 transition-colors"
                                                 onClick={handleClose}
                                             >
                                                 Browse Books
@@ -175,7 +175,7 @@ export function WelcomeToast() {
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 0.95 }}
                                             onClick={handleClose}
-                                            className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-lg font-semibold hover:bg-white/30 transition-colors"
+                                            className="px-3 sm:px-4 py-2 text-sm sm:text-base bg-white/20 backdrop-blur-sm rounded-lg font-semibold hover:bg-white/30 transition-colors whitespace-nowrap"
                                         >
                                             Maybe Later
                                         </motion.button>

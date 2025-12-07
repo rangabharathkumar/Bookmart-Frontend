@@ -141,16 +141,16 @@ export function AuthPage() {
 
                         {/* Title */}
                         <motion.h1
-                            className="text-4xl font-bold text-center text-white mb-2 flex items-center justify-center gap-2"
+                            className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-white mb-2 flex items-center justify-center gap-2"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
                         >
                             BookMart
-                            <Sparkles className="w-6 h-6 text-yellow-400" />
+                            <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400" />
                         </motion.h1>
                         <motion.p
-                            className="text-center text-white/70 mb-6"
+                            className="text-center text-sm sm:text-base text-white/70 mb-4 sm:mb-6"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.5 }}
