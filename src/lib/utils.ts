@@ -6,10 +6,14 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatPrice(price: number): string {
-    return new Intl.NumberFormat('en-US', {
+    // Convert backend price to INR (multiply by 30 as requested)
+    const inrPrice = price * 30
+
+    return new Intl.NumberFormat('en-IN', {
         style: 'currency',
-        currency: 'USD',
-    }).format(price)
+        currency: 'INR',
+        maximumFractionDigits: 0,
+    }).format(inrPrice)
 }
 
 export function formatDate(date: string): string {
