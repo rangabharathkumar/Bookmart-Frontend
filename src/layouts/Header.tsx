@@ -29,9 +29,10 @@ export function Header() {
         <header className="sticky top-0 z-50 w-full border-b border-neutral-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
             <div className="container mx-auto flex h-16 items-center justify-between px-4">
                 {/* Logo */}
-                <Link to="/" className="flex items-center gap-2 text-xl sm:text-2xl font-bold text-primary-600 hover:text-primary-700 transition-colors">
+                <Link to="/" className="flex items-center gap-1 sm:gap-2 text-xl sm:text-2xl font-bold text-primary-600 hover:text-primary-700 transition-colors">
                     <BookOpen className="h-6 w-6 sm:h-8 sm:w-8" />
-                    <span>BookMart</span>
+                    <span className="hidden xs:inline">BookMart</span>
+                    <span className="inline xs:hidden">BM</span>
                 </Link>
 
                 {/* Search Bar */}
@@ -49,12 +50,9 @@ export function Header() {
                 </form>
 
                 {/* Navigation */}
-                <nav className="flex items-center gap-2 sm:gap-4">
-                    <Link to="/books">
-                        <Button variant="ghost" size="sm" className="sm:h-10">
-                            <Search className="h-5 w-5 sm:hidden" />
-                            <span className="hidden sm:inline">Browse Books</span>
-                        </Button>
+                <nav className="flex items-center gap-1 sm:gap-2 md:gap-4">
+                    <Link to="/books" className="hidden sm:block">
+                        <Button variant="ghost">Browse Books</Button>
                     </Link>
 
                     {user ? (
