@@ -93,7 +93,7 @@ export function BooksPage() {
 
                 {/* Filter Button and Active Filters */}
                 <motion.div
-                    className="mb-6 flex items-center gap-3 flex-wrap"
+                    className="mb-8 lg:mb-4 flex items-center gap-3 flex-wrap"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
@@ -163,7 +163,7 @@ export function BooksPage() {
 
                 {/* Results Count */}
                 <motion.div
-                    className="mb-2"
+                    className="mb-4 lg:mb-2"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
