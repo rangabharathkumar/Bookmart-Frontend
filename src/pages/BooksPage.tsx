@@ -40,7 +40,7 @@ export function BooksPage() {
     const filterBooks = () => {
         let filtered = books
 
-        // Filter by search query
+        // Search
         if (searchQuery) {
             const query = searchQuery.toLowerCase()
             filtered = filtered.filter(
@@ -51,7 +51,7 @@ export function BooksPage() {
             )
         }
 
-        // Filter by category
+        // Category filter
         if (selectedCategory !== 'all') {
             filtered = filtered.filter((book) => book.category === selectedCategory)
         }
@@ -79,24 +79,24 @@ export function BooksPage() {
     if (loading) return <LoadingPage />
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-white to-primary-50 py-8">
+        <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-white to-primary-50 py-6">
             <div className="container mx-auto px-4">
+
                 {/* Header */}
                 <motion.div
-                    className="mb-8"
+                    className="mb-6"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                 >
-                    <h1 className="text-4xl font-bold mb-2 gradient-text">Browse Books</h1>
+                    <h1 className="text-4xl font-bold mb-1 gradient-text">Browse Books</h1>
                     <p className="text-neutral-600">Explore our complete collection</p>
                 </motion.div>
 
-                {/* Filter Button and Active Filters */}
+                {/* Filter Button + Tags */}
                 <motion.div
-                    className="mb-4 flex items-center gap-3 flex-wrap relative z-10"
+                    className="mb-3 flex items-center gap-3 flex-wrap relative z-10"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 }}
                 >
                     <Button
                         onClick={() => setShowFilterModal(true)}
@@ -111,7 +111,7 @@ export function BooksPage() {
                         )}
                     </Button>
 
-                    {/* Active Filter Tags */}
+                    {/* Tags */}
                     <AnimatePresence>
                         {searchQuery && (
                             <motion.div
@@ -163,31 +163,36 @@ export function BooksPage() {
 
                 {/* Results Count */}
                 <motion.div
-                    className="mb-6"
+                    className="mb-4"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.2 }}
                 >
                     <p className="text-neutral-600">
-                        Showing <span className="font-semibold text-primary-600">{filteredBooks.length}</span> {filteredBooks.length === 1 ? 'book' : 'books'}
+                        Showing <span className="font-semibold text-primary-600">{filteredBooks.length}</span> books
                     </p>
                 </motion.div>
 
-                {/* Books Grid */}
+                {/* Books Grid — FIXED RESPONSIVE SPACING */}
                 {filteredBooks.length > 0 ? (
                     <motion.div
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mt-6"
+                        className="
+                            grid 
+                            grid-cols-1 
+                            sm:grid-cols-2 
+                            lg:grid-cols-4 
+                            gap-6 
+                            md:gap-8 
+                            mt-4   /* prevents overlap on mobile */
+                        "
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 0.3 }}
                     >
                         {filteredBooks.map((book, index) => (
                             <motion.div
                                 key={book.id}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.1 * (index % 8) }}
-                                className="w-full"
+                                transition={{ delay: 0.05 * (index % 8) }}
                             >
                                 <BookCard book={book} />
                             </motion.div>
@@ -200,12 +205,10 @@ export function BooksPage() {
                         animate={{ opacity: 1, scale: 1 }}
                     >
                         <div className="text-6xl mb-4">📚</div>
-                        <p className="text-neutral-600 text-lg mb-4">No books found matching your criteria</p>
-                        <Button
-                            variant="outline"
-                            onClick={handleClearFilters}
-                            className="gap-2"
-                        >
+                        <p className="text-neutral-600 text-lg mb-4">
+                            No books found matching your criteria
+                        </p>
+                        <Button variant="outline" onClick={handleClearFilters} className="gap-2">
                             <X className="w-4 h-4" />
                             Clear Filters
                         </Button>
