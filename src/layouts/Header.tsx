@@ -93,14 +93,11 @@ export function Header() {
                             </Button>
                         </>
                     ) : (
-                        <>
-                            <Link to="/login">
-                                <Button variant="outline">Login</Button>
-                            </Link>
-                            <Link to="/register">
-                                <Button>Sign Up</Button>
-                            </Link>
-                        </>
+                        <Link to="/auth">
+                            <Button className="bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700">
+                                Login / Sign Up
+                            </Button>
+                        </Link>
                     )}
                 </nav>
             </div>

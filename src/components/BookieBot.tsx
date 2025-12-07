@@ -27,7 +27,7 @@ export function BookieBot() {
         <>
             {/* Bookie Bot Mascot */}
             <motion.div
-                className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50"
+                className="fixed bottom-4 left-4 sm:bottom-8 sm:left-8 z-50"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 1, type: 'spring', stiffness: 200 }}
