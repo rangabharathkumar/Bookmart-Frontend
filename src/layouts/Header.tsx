@@ -94,7 +94,7 @@ export function Header() {
                         </>
                     ) : (
                         <Link to="/auth">
-                            <Button>Account</Button>
+                            <Button className="scale-95">Account</Button>
                         </Link>
                     )}
                 </nav>
