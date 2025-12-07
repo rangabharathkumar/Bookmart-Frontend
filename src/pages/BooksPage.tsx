@@ -163,7 +163,7 @@ export function BooksPage() {
 
                 {/* Results Count */}
                 <motion.div
-                    className="mb-2"
+                    className="mb-6"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
@@ -176,7 +176,7 @@ export function BooksPage() {
                 {/* Books Grid */}
                 {filteredBooks.length > 0 ? (
                     <motion.div
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.3 }}
