@@ -49,9 +49,12 @@ export function Header() {
                 </form>
 
                 {/* Navigation */}
-                <nav className="flex items-center gap-4">
+                <nav className="flex items-center gap-2 sm:gap-4">
                     <Link to="/books">
-                        <Button variant="ghost">Browse Books</Button>
+                        <Button variant="ghost" className="px-2 sm:px-4">
+                            <BookOpen className="h-5 w-5 md:mr-2" />
+                            <span className="hidden md:inline">Browse Books</span>
+                        </Button>
                     </Link>
 
                     {user ? (
