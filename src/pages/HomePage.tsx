@@ -43,9 +43,9 @@ export function HomePage() {
                 {/* Animated Background Particles */}
                 <div className="absolute inset-0 particles-bg opacity-50" />
 
-                {/* Floating Orbs */}
+                {/* Floating Orbs - Hidden on mobile */}
                 <motion.div
-                    className="absolute top-20 left-10 w-64 h-64 bg-accent-500/20 rounded-full blur-3xl"
+                    className="absolute top-20 left-10 w-32 h-32 md:w-64 md:h-64 bg-accent-500/20 rounded-full blur-3xl hidden sm:block"
                     animate={{
                         y: [0, 30, 0],
                         scale: [1, 1.1, 1],
@@ -53,7 +53,7 @@ export function HomePage() {
                     transition={{ duration: 8, repeat: Infinity }}
                 />
                 <motion.div
-                    className="absolute bottom-20 right-10 w-96 h-96 bg-primary-400/20 rounded-full blur-3xl"
+                    className="absolute bottom-20 right-10 w-48 h-48 md:w-96 md:h-96 bg-primary-400/20 rounded-full blur-3xl hidden sm:block"
                     animate={{
                         y: [0, -40, 0],
                         scale: [1, 1.2, 1],
@@ -61,7 +61,7 @@ export function HomePage() {
                     transition={{ duration: 10, repeat: Infinity }}
                 />
 
-                <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
+                <div className="container mx-auto px-4 py-12 sm:py-20 md:py-32 relative z-10">
                     <div className="max-w-3xl">
                         {/* Animated Heading */}
                         <motion.div
@@ -70,14 +70,14 @@ export function HomePage() {
                             transition={{ duration: 0.8 }}
                         >
                             <motion.h1
-                                className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+                                className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2, duration: 0.8 }}
                             >
                                 Discover Your Next
                                 <motion.span
-                                    className="block text-accent-400 flex items-center gap-3"
+                                    className="block text-accent-400 flex items-center gap-2 md:gap-3"
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.5, duration: 0.8 }}

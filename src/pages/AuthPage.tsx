@@ -60,7 +60,7 @@ export function AuthPage() {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900">
+        <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 p-4">
             {/* Animated Stars Background */}
             <div className="absolute inset-0">
                 {[...Array(50)].map((_, i) => (
@@ -84,9 +84,9 @@ export function AuthPage() {
                 ))}
             </div>
 
-            {/* Floating Gradient Orbs */}
+            {/* Floating Gradient Orbs - Hidden on mobile */}
             <motion.div
-                className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-pink-500/30 to-purple-500/30 rounded-full blur-3xl"
+                className="absolute top-1/4 left-1/4 w-48 h-48 md:w-96 md:h-96 bg-gradient-to-r from-pink-500/30 to-purple-500/30 rounded-full blur-3xl hidden sm:block"
                 animate={{
                     x: [0, 100, 0],
                     y: [0, -50, 0],
@@ -95,7 +95,7 @@ export function AuthPage() {
                 transition={{ duration: 20, repeat: Infinity }}
             />
             <motion.div
-                className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/30 to-cyan-500/30 rounded-full blur-3xl"
+                className="absolute bottom-1/4 right-1/4 w-48 h-48 md:w-96 md:h-96 bg-gradient-to-r from-blue-500/30 to-cyan-500/30 rounded-full blur-3xl hidden sm:block"
                 animate={{
                     x: [0, -100, 0],
                     y: [0, 50, 0],
@@ -109,7 +109,7 @@ export function AuthPage() {
                 initial={{ opacity: 0, y: 50, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.8, type: 'spring' }}
-                className="w-full max-w-md px-4 relative z-10"
+                className="w-full max-w-md relative z-10"
             >
                 <motion.div
                     className="bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl border-2 border-white/20 overflow-hidden"

@@ -63,7 +63,7 @@ export function BookDetailPage() {
                 </Button>
             </Link>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12">
                 {/* Image */}
                 <div>
                     <Card className="overflow-hidden">
@@ -83,21 +83,21 @@ export function BookDetailPage() {
                         </span>
                     </div>
 
-                    <h1 className="text-4xl font-bold mb-2">{book.title}</h1>
-                    <p className="text-xl text-neutral-600 mb-6">by {book.author}</p>
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">{book.title}</h1>
+                    <p className="text-lg sm:text-xl text-neutral-600 mb-4 md:mb-6">by {book.author}</p>
 
-                    <div className="flex items-center gap-2 mb-6">
+                    <div className="flex items-center gap-2 mb-4 md:mb-6">
                         {[...Array(5)].map((_, i) => (
                             <Star
                                 key={i}
-                                className="h-5 w-5 fill-secondary-400 text-secondary-400"
+                                className="h-4 w-4 sm:h-5 sm:w-5 fill-secondary-400 text-secondary-400"
                             />
                         ))}
-                        <span className="text-neutral-600">(4.5 out of 5)</span>
+                        <span className="text-sm sm:text-base text-neutral-600">(4.5 out of 5)</span>
                     </div>
 
-                    <div className="mb-6">
-                        <p className="text-4xl font-bold text-primary-600 mb-2">
+                    <div className="mb-4 md:mb-6">
+                        <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-600 mb-2">
                             {formatPrice(book.price)}
                         </p>
                         <div className="flex items-center gap-2 text-neutral-600">
