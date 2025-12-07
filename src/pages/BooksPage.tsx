@@ -163,7 +163,7 @@ export function BooksPage() {
 
                 {/* Results Count */}
                 <motion.div
-                    className="mb-4 mt-6"
+                    className="mb-2"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
