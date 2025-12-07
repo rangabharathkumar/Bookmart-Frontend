@@ -139,7 +139,7 @@ export function HomePage() {
                             { icon: BookOpen, title: 'Vast Collection', desc: 'Thousands of books across all genres and categories', color: 'primary', delay: 0 },
                             { icon: ShoppingBag, title: 'Easy Shopping', desc: 'Simple and secure checkout process', color: 'accent', delay: 0.1 },
                             { icon: TrendingUp, title: 'Best Prices', desc: 'Competitive prices and regular discounts', color: 'primary', delay: 0.2 },
-                        ].map((feature, index) => {
+                        ].map((feature) => {
                             const Icon = feature.icon
                             return (
                                 <motion.div

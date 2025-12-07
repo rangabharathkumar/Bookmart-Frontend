@@ -43,7 +43,7 @@ export function CheckoutPage() {
             // Simulate payment processing
             await new Promise(resolve => setTimeout(resolve, 2000))
 
-            const response = await orderService.placeOrder(orderRequest)
+            await orderService.placeOrder(orderRequest)
             const generatedOrderNumber = `BM${Date.now().toString().slice(-8)}`
             setOrderNumber(generatedOrderNumber)
             clearCart()

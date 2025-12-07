@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { BookOpen, Mail, Lock, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card'
+import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card'
 import { authService } from '@/services/authService'
 import { useAuthStore } from '@/store'
 
@@ -120,8 +120,8 @@ export function LoginPage() {
                                     <motion.label
                                         htmlFor="email"
                                         className={`absolute left-3 transition-all duration-200 pointer-events-none ${emailFocused || email
-                                                ? '-top-2 text-xs bg-primary-900/50 px-2 rounded text-accent-400'
-                                                : 'top-3 text-sm text-primary-200'
+                                            ? '-top-2 text-xs bg-primary-900/50 px-2 rounded text-accent-400'
+                                            : 'top-3 text-sm text-primary-200'
                                             }`}
                                         animate={{
                                             y: emailFocused || email ? -8 : 0,
@@ -157,8 +157,8 @@ export function LoginPage() {
                                     <motion.label
                                         htmlFor="password"
                                         className={`absolute left-3 transition-all duration-200 pointer-events-none ${passwordFocused || password
-                                                ? '-top-2 text-xs bg-primary-900/50 px-2 rounded text-accent-400'
-                                                : 'top-3 text-sm text-primary-200'
+                                            ? '-top-2 text-xs bg-primary-900/50 px-2 rounded text-accent-400'
+                                            : 'top-3 text-sm text-primary-200'
                                             }`}
                                         animate={{
                                             y: passwordFocused || password ? -8 : 0,
