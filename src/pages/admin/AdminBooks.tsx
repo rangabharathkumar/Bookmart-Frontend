@@ -51,7 +51,7 @@ export function AdminBooks() {
                 description: formData.description,
                 price: parseFloat(formData.price),
                 isbn: formData.isbn,
-                stock: parseInt(formData.stockQuantity),
+                stockQuantity: parseInt(formData.stockQuantity),
                 category: formData.category,
                 imageUrl: formData.imageUrl,
             }
